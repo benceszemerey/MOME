@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="p5v3 TEMPLATE">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>p5js class MOME - Bence Szemerey</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.4/p5.min.js"></script>
+    <script src="http://endreymarcell.hu/p5v3/p5.play.js"></script>
+<style id="jsbin-css">
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+</style>
+</head>
+<body>
+</html>
+<script id="jsbin-javascript">
+/*
+2017
+Bence Szemerey
+P5js programming course 
+Media Design - Moholy-Nagy University
+*/
+
+function setup() {
+	createCanvas(windowWidth, windowHeight);
+    frameRate(20);
+    background(0, 0, 0);
+}
+
+function draw() {
+    matrixStream();
+}
+
+function matrixStream() {
+    
+    this.katakanaGenerator = function() {
+        this.value = String.fromCharCode(0x30A0+round(random(0,96)));
+        textSize(20);
+        fill(0,230,150);
+        text(this.value, 0, 0);
+    }
+    
+    if(frameCount%1 == 0) {
+        var streamline = createSprite(20*round(random(1,width/20)),0, 20, 20);
+        
+        background(0, 0, 0, 30);
+
+        streamline.draw = katakanaGenerator
+        streamline.velocity.y = 20;
+        
+        drawSprites();
+    }
+}
+</script>
+
+<script id="jsbin-source-css" type="text/css">body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}</script>
+
+<script id="jsbin-source-javascript" type="text/javascript">/*
+2017
+Bence Szemerey
+P5js programming course 
+Media Design - Moholy-Nagy University
+*/
+
+function setup() {
+	createCanvas(windowWidth, windowHeight);
+    frameRate(20);
+    background(0, 0, 0);
+}
+
+function draw() {
+    matrixStream();
+}
+
+function matrixStream() {
+    
+    this.katakanaGenerator = function() {
+        this.value = String.fromCharCode(0x30A0+round(random(0,96)));
+        textSize(20);
+        fill(0,230,150);
+        text(this.value, 0, 0);
+    }
+    
+    if(frameCount%1 == 0) {
+        var streamline = createSprite(20*round(random(1,width/20)),0, 20, 20);
+        
+        background(0, 0, 0, 30);
+
+        streamline.draw = katakanaGenerator
+        streamline.velocity.y = 20;
+        
+        drawSprites();
+    }
+}</script>
