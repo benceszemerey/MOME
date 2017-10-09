@@ -24,14 +24,12 @@ function matrixStream() {
         text(this.value, 0, 0);
     }
     
-    if(frameCount%1 == 0) {
-        var streamline = createSprite(20*round(random(1,width/20)),0, 20, 20);
-        
-        background(0, 0, 0, 30);
+	var streamline = createSprite(20*round(random(1,width/20)),0, 20, 20);
 
-        streamline.draw = katakanaGenerator
-        streamline.velocity.y = 20;
-        
-        drawSprites();
-    }
+	background(0, 0, 0, 30);
+
+	streamline.draw = katakanaGenerator
+	streamline.velocity.y = 20;
+
+	drawSprites();
 }
